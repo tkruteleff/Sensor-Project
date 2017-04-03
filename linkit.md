@@ -1,4 +1,5 @@
 ##### Link dump
+- [VDI Cloud](https://vdi-lab.cp.haaga-helia.fi/client/)
 - [GPIO Header](https://www.raspberrypi.org/documentation/usage/gpio-plus-and-raspi2/) 
 - [GPIO Header2](http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-b-gpio-header-details-and-pinout/)
 
