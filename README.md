@@ -9,5 +9,5 @@ Sensor project for Haaga-Helia's System Project II course
 - [Verkkokauppa Ultraäänisensori](https://www.verkkokauppa.com/fi/product/5217/gqjgr/HC-SR04-ultraaanisensori-Raspberry-Pi-seka-Arduino-alustoill)
 - [Verkkokauppan RaspB ohje](https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)
 
-##Example projects
+## Example projects
 - [Leon Anavi Distance](https://github.com/leon-anavi/rpi-examples)
