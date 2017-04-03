@@ -1,4 +1,0 @@
-MySQL iot esimerkki: 	http://iot-projects.com/index.php?id=diy_hms_raspberry_pi
-MySQL iot kirja: 	http://www.apress.com/us/book/9781484212943
-MySQL iot:		https://www.percona.com/blog/2015/10/23/internet-of-things-messaging-mysql/
-MySQL bigdata:		https://www.mysql.com/why-mysql/bigdata/
