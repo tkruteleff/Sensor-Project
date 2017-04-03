@@ -1,0 +1,8 @@
+
+
+nimi: Wrex Eikuollu
+kone: krogandesk
+u: krogan
+pw: xubuntucolamusta
+
+koneen mysql root pw xubuntumysqlmusta
