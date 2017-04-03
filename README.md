@@ -10,4 +10,4 @@ Sensor project for Haaga-Helia's System Project II course
 - [Verkkokauppan RaspB ohje](https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)
 
 ## Example projects
-- [Leon Anavi Distance](https://github.com/leon-anavi/rpi-examples)
+- [Leon Anavi Distance](https://github.com/leon-anavi/rpi-examples/tree/master/HC-SR04/python)
