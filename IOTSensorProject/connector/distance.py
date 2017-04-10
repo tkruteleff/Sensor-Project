@@ -34,22 +34,36 @@ while True:
 	GPIO.output(pinTrigger, False)
 	GPIO.output(pinRTrigger, False)
 
-	startTime = time.time()
-	stopTime = time.time()
+	startTime1 = time.time()
+	stopTime1 = time.time()
+
+	startTime2 = time.time()
+	stopTime2 = time.time()
 
 	# save start time
-	while 0 == GPIO.input(pinEcho) & 0 == GPIO.input(pinREcho):
-		startTime = time.time()
+	while 0 == GPIO.input(pinEcho):
+		startTime1 = time.time()
+
+	while 0 == GPIO.input(pinREcho):
+		startTime2 = time.time()
 
 	# save time of arrival
-	while 1 == GPIO.input(pinEcho) & 1 == GPIO.input(pinREcho):
-		stopTime = time.time()
+	while 1 == GPIO.input(pinEcho):
+		stopTime1 = time.time()
+
+	while 1 == GPIO.input(pinREcho):
+		stopTime2 == time.time()
 
 	# time difference between start and arrival
-	TimeElapsed = stopTime - startTime
+	TimeElapsed1 = stopTime1 - startTime1
+
+	TimeElapsed2 = stopTime2 - startTime2
 	# multiply with the sonic speed (34300 cm/s)
 	# and divide by 2, because there and back
-	distance = (TimeElapsed * 34300) / 2
+	distance1 = (TimeElapsed1 * 34300) / 2
 
-	print ("Distance: %.1f cm" % distance)
+	distance2 = (TimeElapsed2 * 34300) / 2
+
+	print ("Distance: %.1f cm" % distance1)
 	time.sleep(1)
+	print("Distance: %.lf cm" % distance2)
