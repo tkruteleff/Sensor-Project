@@ -8,10 +8,10 @@ from DBConnector import insert
 GPIO.setmode(GPIO.BCM)
 
 #Defineing Trigger and Echo pin locations on Rasp
-pinTrigger = 19
-pinEcho = 13
-pinRTrigger = 23
-pinREcho = 24
+pinTriggerLeft = 19
+pinEchoLeft = 13
+pinTriggerRight = 23
+pinEchoRight = 24
 
 def close(signal, frame):
 	print("\nTurning off ultrasonic distance detection...\n")
@@ -21,49 +21,56 @@ def close(signal, frame):
 signal.signal(signal.SIGINT, close)
 
 #Setting up the trigger and echo pin Outputs and Inputs
-GPIO.setup(pinTrigger, GPIO.OUT)
-GPIO.setup(pinEcho, GPIO.IN)
-GPIO.setup(pinRTrigger, GPIO.OUT)
-GPIO.setup(pinREcho, GPIO.IN)
+GPIO.setup(pinTriggerLeft, GPIO.OUT)
+GPIO.setup(pinEchoLeft, GPIO.IN)
+GPIO.setup(pinTriggerRight, GPIO.OUT)
+GPIO.setup(pinEchoRight, GPIO.IN)
 
 while True:
 
-	GPIO.output(pinTrigger, True)
-	GPIO.output(pinRTrigger, True)
+	GPIO.output(pinTriggerLeft, True)
+	GPIO.output(pinTriggerRight, True)
 	time.sleep(0.00001)
-	GPIO.output(pinTrigger, False)
-	GPIO.output(pinRTrigger, False)
+	GPIO.output(pinTriggerLeft, False)
+	GPIO.output(pinTriggerRight, False)
 
-	startTime1 = time.time()
-	stopTime1 = time.time()
+	def SensorRangeLeft():
+		GPIO.output(pinTriggerLeft,True)
+		time.sleep(0.00001)
+		GPIO.output(pinTriggerLeft, False)
+		startTimeLeft = time.time()
+		stopTimeLeft = time.time()
 
-	startTime2 = time.time()
-	stopTime2 = time.time()
+		while 0 == GPIO.input(pinEchoLeft):
+				startTimeLeft = time.time()
 
-	# save start time
-	while 0 == GPIO.input(pinEcho):
-		startTime1 = time.time()
+		while 1 == GPIO.input(pinEchoLeft):
+			stopTimeLeft = time.time()
 
-	while 0 == GPIO.input(pinREcho):
-		startTime2 = time.time()
+		TimeElapsedLeft = stopTimeLeft - startTimeLeft
 
-	# save time of arrival
-	while 1 == GPIO.input(pinEcho):
-		stopTime1 = time.time()
+		distanceLeft = (TimeElapsedLeft * 34300) /2
 
-	while 1 == GPIO.input(pinREcho):
-		stopTime2 == time.time()
+		print ("DistanceLeft: %.1f cm" % distanceLeft)
+		time.sleep(1)
 
-	# time difference between start and arrival
-	TimeElapsed1 = stopTime1 - startTime1
 
-	TimeElapsed2 = stopTime2 - startTime2
-	# multiply with the sonic speed (34300 cm/s)
-	# and divide by 2, because there and back
-	distance1 = (TimeElapsed1 * 34300) / 2
+	def SensorRangeRight():
+		GPIO.output(pinTriggerRight, True)
+		time.sleep(0.00001)
+		GPIO.output(pinTriggerRight, False)
+		startTimeRight = time.time()
+		stopTimeRight = time.time()
 
-	distance2 = (TimeElapsed2 * 34300) / 2
 
-	print ("Distance1: %.1f cm" % distance1)
-	time.sleep(1)
-	print("Distance2: %.lf cm" % distance2)
+		while 0 == GPIO.input(pinEchoRight):
+			startTimeRight = time.time()
+
+		while 1 == GPIO.input(pinEchoRight):
+			stopTimeRight == time.time()
+
+		TimeElapsedRight = startTimeRight - stopTimeRight
+
+		distanceRight = (TimeElapsedRight * 34300) / 2
+
+		print("DistanceRight: %.lf cm" % distanceRight)
