@@ -51,5 +51,9 @@ while True:
 	# and divide by 2, because there and back
 	distance = (TimeElapsed * 34300) / 2
 
+	if distance < 10:
+		print("1")
+		insert()
+	
 	print ("Distance: %.1f cm" % distance)
 	time.sleep(1)
