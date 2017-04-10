@@ -64,6 +64,6 @@ while True:
 
 	distance2 = (TimeElapsed2 * 34300) / 2
 
-	print ("Distance: %.1f cm" % distance1)
+	print ("Distance1: %.1f cm" % distance1)
 	time.sleep(1)
-	print("Distance: %.lf cm" % distance2)
+	print("Distance2: %.lf cm" % distance2)
