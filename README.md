@@ -12,3 +12,5 @@ Sensor project for Haaga-Helia's System Project II course
 
 ## Example projects
 - [Leon Anavi Distance](https://github.com/leon-anavi/rpi-examples/tree/master/HC-SR04/python)
+
+blaablaa
