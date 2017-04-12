@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
-import time
+import time as timeNorm
+import time as timeLeft
+import time as timeRight
 import signal
 import sys
 from datetime import datetime
@@ -30,51 +32,51 @@ while True:
 
 	GPIO.output(pinTriggerLeft, True)
 	GPIO.output(pinTriggerRight, True)
-	time.sleep(0.00001)
+	timeNorm.sleep(0.00001)
 	GPIO.output(pinTriggerLeft, False)
 	GPIO.output(pinTriggerRight, False)
 
 	def SensorRangeLeft():
 		GPIO.output(pinTriggerLeft,True)
-		time.sleep(0.00001)
+		timeLeft.sleep(0.00001)
 		GPIO.output(pinTriggerLeft, False)
-		startTimeLeft = time.time()
-		stopTimeLeft = time.time()
+		startTimeLeft = timeLeft.time()
+		stopTimeLeft = timeLeft.time()
 
 		while 0 == GPIO.input(pinEchoLeft):
-				startTimeLeft = time.time()
+				startTimeLeft = timeLeft.time()
 
 		while 1 == GPIO.input(pinEchoLeft):
-			stopTimeLeft = time.time()
+			stopTimeLeft = timeLeft.time()
 
 		TimeElapsedLeft = stopTimeLeft - startTimeLeft
 
 		distanceLeft = (TimeElapsedLeft * 34300) /2
 
 		print ("DistanceLeft: %.1f cm" % distanceLeft)
-		time.sleep(1)
+		timeLeft.sleep(1)
 
 	SensorRangeLeft()
 
 	def SensorRangeRight():
 		GPIO.output(pinTriggerRight, True)
-		time.sleep(0.00001)
+		timeRight.sleep(0.00001)
 		GPIO.output(pinTriggerRight, False)
-		startTimeRight = time.time()
-		stopTimeRight = time.time()
+		startTimeRight = timeRight.time()
+		stopTimeRight = timeRight.time()
 
 
 		while 0 == GPIO.input(pinEchoRight):
-			startTimeRight = time.time()
+			startTimeRight = timeRight.time()
 
 		while 1 == GPIO.input(pinEchoRight):
-			stopTimeRight == time.time()
+			stopTimeRight == timeRight.time()
 
 		TimeElapsedRight = startTimeRight - stopTimeRight
 
 		distanceRight = (TimeElapsedRight * 34300) / 2
 
 		print("DistanceRight: %.lf cm" % distanceRight)
-		time.sleep(1)
+		timeRight.sleep(1)
 
 	SensorRangeRight()
