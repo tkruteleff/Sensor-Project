@@ -36,8 +36,10 @@ Nykyisellä koodilla kahden mittarin järjestelmällä vain lyhyempi matka print
 
 #### RasPi
 Ratkaistu: Oikea Sensori mittaa aina saman arvon
+ 
 Sensorit toimivat yksittäin, mutta ei yhdessä
 
 #### PHP
 Prototyyppi: Pystyy hakemaan dataa kannasta ja näyttää ne .php sivulla
+ 
 Tekeillä: Datan lajittelu graaphiseen muotoon .php:llä
