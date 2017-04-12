@@ -47,6 +47,8 @@ while True:
 		print ("DistanceLeft: %.1f cm" % distanceLeft)
 		time.sleep(1)
 
+
+	SensorRangeLeft()
 	if SensorRangeLeft().distanceLeft > 30:
 
 		distanceRight.SensorRangeRight()
