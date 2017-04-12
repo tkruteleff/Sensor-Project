@@ -1,5 +1,4 @@
-## aspberry projekti 3: tilan/ruokalajonon status 
-#### Tilanne
+## Raspberry projekti 3: tilan/ruokalajonon status 
 
 #### Raspberry Pi
 Raspian Lite asennettu
@@ -25,10 +24,20 @@ Tarvitaan transistoreita (Kaapo hankkii?)
 
 
 
-Päivitys: 5.4.2017
+## Update 5.4.2017
 
 #### Tarvikkeet
 Kaikki osat saatu:
 
 #### Distance:
 Nykyisellä koodilla kahden mittarin järjestelmällä vain lyhyempi matka printataan.
+
+## Update 12.4.2017
+
+#### RasPi
+Ratkaistu: Oikea Sensori mittaa aina saman arvon
+Sensorit toimivat yksittäin, mutta ei yhdessä
+
+#### PHP
+Prototyyppi: Pystyy hakemaan dataa kannasta ja näyttää ne .php sivulla
+Tekeillä: Datan lajittelu graaphiseen muotoon .php:llä
