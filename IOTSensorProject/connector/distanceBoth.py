@@ -1,5 +1,6 @@
 import distance
 import distanceRight
 
-distance.SensorRangeLeft()
-distanceRight.SensorRangeRight()
+while True:
+    distance.SensorRangeLeft()
+    distanceRight.SensorRangeRight()
