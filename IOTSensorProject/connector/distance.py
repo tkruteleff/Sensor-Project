@@ -74,3 +74,4 @@ while True:
 		distanceRight = (TimeElapsedRight * 34300) / 2
 
 		print("DistanceRight: %.lf cm" % distanceRight)
+		time.sleep(1)
