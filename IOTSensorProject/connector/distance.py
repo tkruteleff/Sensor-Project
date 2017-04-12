@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import signal
 import sys
+import distanceRight
 
 GPIO.setmode(GPIO.BCM)
 
@@ -47,3 +48,5 @@ while True:
 		time.sleep(1)
 
 	SensorRangeLeft()
+	
+	distanceRight.SensorRangeRight()
