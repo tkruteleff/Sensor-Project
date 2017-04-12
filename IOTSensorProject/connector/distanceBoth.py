@@ -6,5 +6,5 @@ t1 = Thread(target = distance.SensorRangeLeft())
 t2 = Thread(target = distanceRight.SensorRangeRight())
 
 t1.start()
-t2.start()
+t2.join()
 
