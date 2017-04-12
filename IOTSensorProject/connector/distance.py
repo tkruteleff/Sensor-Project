@@ -34,8 +34,6 @@ while True:
 	GPIO.output(pinTriggerLeft, False)
 	GPIO.output(pinTriggerRight, False)
 
-	SensorRangeLeft()
-
 	def SensorRangeLeft():
 		GPIO.output(pinTriggerLeft,True)
 		time.sleep(0.00001)
@@ -56,7 +54,7 @@ while True:
 		print ("DistanceLeft: %.1f cm" % distanceLeft)
 		time.sleep(1)
 
-	SensorRangeRight()
+	SensorRangeLeft()
 
 	def SensorRangeRight():
 		GPIO.output(pinTriggerRight, True)
@@ -78,3 +76,5 @@ while True:
 
 		print("DistanceRight: %.lf cm" % distanceRight)
 		time.sleep(1)
+
+	SensorRangeRight()
