@@ -20,30 +20,29 @@ signal.signal(signal.SIGINT, close)
 GPIO.setup(pinTriggerRight, GPIO.OUT)
 GPIO.setup(pinEchoRight, GPIO.IN)
 
-while True:
 
+GPIO.output(pinTriggerRight, True)
+time.sleep(0.00001)
+GPIO.output(pinTriggerRight, False)
+
+def SensorRangeRight():
 	GPIO.output(pinTriggerRight, True)
 	time.sleep(0.00001)
 	GPIO.output(pinTriggerRight, False)
+	startTime = time.time()
+	stopTime = time.time()
 
-	def SensorRangeRight():
-		GPIO.output(pinTriggerRight, True)
-		time.sleep(0.00001)
-		GPIO.output(pinTriggerRight, False)
+	while 0 == GPIO.input(pinEchoRight):
 		startTime = time.time()
+
+	while 1 == GPIO.input(pinEchoRight):
 		stopTime = time.time()
 
-		while 0 == GPIO.input(pinEchoRight):
-			startTime = time.time()
+	TimeElapsed = stopTime - startTime
 
-		while 1 == GPIO.input(pinEchoRight):
-			stopTime = time.time()
+	distance = (TimeElapsed * 34300) / 2
 
-		TimeElapsed = stopTime - startTime
+	print ("DistanceRight: %.1f cm" % distance)
+	time.sleep(1)
 
-		distance = (TimeElapsed * 34300) / 2
-
-		print ("DistanceRight: %.1f cm" % distance)
-		time.sleep(1)
-
-	SensorRangeRight()
+SensorRangeRight()
