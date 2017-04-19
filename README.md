@@ -13,4 +13,5 @@ Sensor project for Haaga-Helia's System Project II course
 ## Example projects and sources
 - [Leon Anavi Distance](https://github.com/leon-anavi/rpi-examples/tree/master/HC-SR04/python)
 - [ElliotTB PHPGraphLib](https://github.com/elliottb/phpgraphlib)
+- [Kim Salmi FallDetector] (https://github.com/infr/falldetector-public)
 
