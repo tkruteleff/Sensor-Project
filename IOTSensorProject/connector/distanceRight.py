@@ -40,9 +40,9 @@ def SensorRangeRight():
 
 	TimeElapsed = stopTime - startTime
 
-	distance = (TimeElapsed * 34300) / 2
+	distanceRightC = (TimeElapsed * 34300) / 2
 
-	print ("DistanceRight: %.1f cm" % distance)
+	print ("DistanceRight: %.1f cm" % distanceRightC)
 	time.sleep(1)
 
 SensorRangeRight()
