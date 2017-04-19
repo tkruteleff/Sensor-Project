@@ -10,6 +10,5 @@ while True:
     SensorRangeLeft()
     SensorRangeRight()
 
-    if left > 50:
-        if right > 50:
-            print("1")
+    if left > 50 & right > 50:
+        print ("1")
