@@ -2,9 +2,9 @@ from distance import *
 from distanceRight import *
 
 
-left = distanceLeftC
-right = distanceRightC
 
+left = SensorRangeLeft().distanceLeftC
+right = SensorRangeRight().distanceRightC
 
 while True:
     SensorRangeLeft()
