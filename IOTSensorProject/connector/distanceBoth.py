@@ -11,7 +11,7 @@ while True:
     SensorRangeLeft()
     SensorRangeRight()
 
-    if (left > minRange & left < maxRange):
+    if (left < 50):
         print ("1")
-    if (right > minRange & right < maxRange):
-        print ("2")
+    #if (right > minRange & right < maxRange):
+     #   print ("2")
