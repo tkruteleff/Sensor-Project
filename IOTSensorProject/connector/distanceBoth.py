@@ -6,6 +6,6 @@ while True:
     distanceRight.SensorRangeRight()
 
     #Vasemman laskeminen
-    if(distance.SensorRangeLeft().distanceLeftC < 50):
-        if(distanceRight.SensorRangeRight().distanceRightC < 50):
+    if(distance.SensorRangeLeft()< 50):
+        if(distanceRight.SensorRangeRight()< 50):
             print ("1")
