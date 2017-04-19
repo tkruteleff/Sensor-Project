@@ -8,7 +8,6 @@ GPIO.setmode(GPIO.BCM)
 #Defineing Trigger and Echo pin locations on Rasp
 pinTriggerLeft = 19
 pinEchoLeft = 13
-distanceLeftC = 0
 
 def close(signal, frame):
 	print("\nTurning off ultrasonic distance detection...\n")

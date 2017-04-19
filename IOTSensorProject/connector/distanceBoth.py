@@ -1,9 +1,11 @@
 from distance import *
+left = __import__(SensorRangeLeft()).distance.distanceLeftC
 from distanceRight import *
+
 
 while True:
     SensorRangeLeft()
     SensorRangeRight()
 
-    if distanceLeftC >> 50:
+    if (left > 50):
         print ("1")
