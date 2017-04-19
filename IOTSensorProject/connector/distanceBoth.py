@@ -1,16 +1,17 @@
 from distance import *
 from distanceRight import *
 
+maxRange = 90
+minRange = 10
 
-
-left = SensorRangeLeft().distanceLeftC
-right = SensorRangeRight().distanceRightC
+left = distanceLeftC
+right = distanceRightC
 
 while True:
     SensorRangeLeft()
     SensorRangeRight()
 
-    if left < 50:
+    if left > minRange & left < maxRange:
         print ("1")
-    if right < 50:
+    if right > minRange & right < maxRange:
         print ("2")

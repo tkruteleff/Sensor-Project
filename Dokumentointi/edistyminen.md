@@ -43,3 +43,12 @@ Sensorit toimivat yksittäin, mutta ei yhdessä -> Toimiiiiiii!!!!!
 Prototyyppi: Pystyy hakemaan dataa kannasta ja näyttää ne .php sivulla
  
 Tekeillä: Datan lajittelu graaphiseen muotoon .php:llä
+
+## Update 19.4.2017
+
+#### RasPi .py
+Koodi ei pysty tulostamaan haluttuja arvoja "1" ja "2" oikeissa parametreissä -> tarvitaan ratkaisu
+
+#### PHP
+Näyttää datan järkevässä aikajanassa.
+Testidatan puutteessa näyttö on erittäin tarkkaa, aikarajoituksia ym. tulee lisätä
