@@ -45,5 +45,3 @@ def SensorRangeRight():
 
 	print ("DistanceRight: %.1f cm" % distanceRightC)
 	time.sleep(1)
-
-SensorRangeRight()
