@@ -1,10 +1,9 @@
-import distance
-import distanceRight
+from distance import *
+from distanceRight import *
 
 while True:
-    distance.SensorRangeLeft()
-    distanceRight.SensorRangeRight()
+    SensorRangeLeft()
+    SensorRangeRight()
 
-    #Vasemman laskeminen
-    if distance.SensorRangeLeft().distanceLeftC <= 50:
+    if SensorRangeLeft().distanceLeftC <= 50:
         print("1")
