@@ -26,7 +26,7 @@ GPIO.output(pinTriggerRight, True)
 time.sleep(0.00001)
 GPIO.output(pinTriggerRight, False)
 
-def SensorRangeRight():
+def SensorRangeRight(distanceRightC):
 	GPIO.output(pinTriggerRight, True)
 	time.sleep(0.00001)
 	GPIO.output(pinTriggerRight, False)
