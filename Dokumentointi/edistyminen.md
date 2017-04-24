@@ -61,7 +61,9 @@ Koodi ei saa raakoja arvoja importista, vain metodit toimivat
 -> Ratkaisu: Kutsutaan metodia arvon sijaan
 
 Kantaan saadaan molempia 'state' arvoja, 1 ja 2.
--> Ongelma: Vasen sensori saa vääriä arvoja (~180cm)
+-> Ongelma: Vasen sensori saa vääriä arvoja (~180cm) FIXED
+
+Ranget oikein
 
 #### PHP
 Rajoitus kymmeneen uusimpaan tapahtumaan. 
