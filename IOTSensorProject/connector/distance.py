@@ -43,6 +43,6 @@ def SensorRangeLeft():
 	distanceLeftC = (TimeElapsedLeft * 34300) /2
 
 	print ("DistanceLeft: %.1f cm" % distanceLeftC)
-	time.sleep(1)
+	time.sleep(5)
 
 	return distanceLeftC
