@@ -12,12 +12,14 @@ connection = pymysql.connect (host = '10.207.3.0',
                                 cursorclass = pymysql.cursors.DictCursor)
 
 try:
+    def insert():
         with connection.cursor() as cursor:
         #Create a new record
             sql = "INSERT INTO raw_data (state) VALUES (%s)"
             cursor.execute(sql, ('1'))
         connection.commit()
         #Read a single record
+    def select():
         with connection.cursor() as cursor:
             sql = "SELECT id, state FROM raw_data WHERE state = %s"
             cursor.execute(sql, ("1",))
