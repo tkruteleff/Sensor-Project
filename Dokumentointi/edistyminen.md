@@ -60,6 +60,9 @@ Testidatan puutteessa näyttö on erittäin tarkkaa, aikarajoituksia ym. tulee l
 Koodi ei saa raakoja arvoja importista, vain metodit toimivat
 -> Ratkaisu: Kutsutaan metodia arvon sijaan
 
+Kantaan saadaan molempia 'state' arvoja, 1 ja 2.
+-> Ongelma: Vasen sensori saa vääriä arvoja (~180cm)
+
 #### PHP
 Rajoitus kymmeneen uusimpaan tapahtumaan. 
 -> Ongelma: Data on "väärinpäin" eli vasemmalta oikealle luettaessa uusin on ensin. Tarkoitus saada rajoitus n. 15 tapahtumaan(tai useampaan) ja saada vanhin ensimmäiseksi aikajanalle. 
