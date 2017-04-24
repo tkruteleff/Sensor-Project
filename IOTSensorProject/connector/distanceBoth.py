@@ -7,6 +7,6 @@ while True:
     SensorRangeRight()
 
     print("This is the distance of " + str(SensorRangeRight()))
-
-    if SensorRangeRight() > 50:
+    print("This is the distance of " + str(SensorRangeLeft()))
+    if SensorRangeRight() < 60:
         print ("1")
