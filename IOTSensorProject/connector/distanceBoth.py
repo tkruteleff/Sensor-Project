@@ -1,14 +1,10 @@
 from distance import *
 from distanceRight import *
 
-SensorRangeRight(distanceRightC)
 
 while True:
     SensorRangeLeft()
-    SensorRangeRight(distanceRightC)
+    SensorRangeRight()
 
-    print("This is the distance of " + str(distanceRightC))
-
-    if distanceRightC > 50:
-        print ("1")
+    print("This is the distance of " + SensorRangeRight())
 
