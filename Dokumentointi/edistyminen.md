@@ -52,3 +52,14 @@ Koodi ei pysty tulostamaan haluttuja arvoja "1" ja "2" oikeissa parametreissä -
 #### PHP
 Näyttää datan järkevässä aikajanassa.
 Testidatan puutteessa näyttö on erittäin tarkkaa, aikarajoituksia ym. tulee lisätä
+
+
+## Update 24.4.2017
+
+#### RasPi .py
+Koodi ei saa raakoja arvoja importista, vain metodit toimivat
+-> Ratkaisu: Kutsutaan metodia arvon sijaan
+
+#### PHP
+Rajoitus kymmeneen uusimpaan tapahtumaan. 
+-> Ongelma: Data on "väärinpäin" eli vasemmalta oikealle luettaessa uusin on ensin. Tarkoitus saada rajoitus n. 15 tapahtumaan(tai useampaan) ja saada vanhin ensimmäiseksi aikajanalle. 
