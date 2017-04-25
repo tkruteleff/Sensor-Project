@@ -71,5 +71,8 @@ Rajoitus kymmeneen uusimpaan tapahtumaan.
 
 
 ## Update 25.4.2017
+#### Revelation
+Muutos kantaan: Statesta muutetaan count, jonka idea on kertoa suoraan senhetkinen paikalla olijoiden määrä. Raspin python koodi tarkastaa kumpi sensoreista aktivoituu ensin ja lisää/vähentää kokonaismäärästä, joka pusketaan kantaan.
 
-Muuots kantaan, Statesta muutetaan count, jonka idea on kertoa suoraan senhetkinen paikallolijoiden määrä
+#### Tilanne: 
+Python koodi saadaan tukemaan ideaa, mutta php graphin SQL lausetta ei saada oikeaan muotoon. (Jos "count(*) as state" muutetaan, graph menee rikki.
