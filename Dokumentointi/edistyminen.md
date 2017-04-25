@@ -76,3 +76,6 @@ Muutos kantaan: Statesta muutetaan count, jonka idea on kertoa suoraan senhetkin
 
 #### Tilanne: 
 Python koodi saadaan tukemaan ideaa, mutta php graphin SQL lausetta ei saada oikeaan muotoon. (Jos "count(*) as state" muutetaan, graph menee rikki.
+
+#### Progress
+SQL lause toimii, näyttää sarakkeen sisällön. ( Tällähetkellä vielä state) Kantamuutosta ei tehty.
