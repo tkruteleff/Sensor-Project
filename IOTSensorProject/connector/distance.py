@@ -5,7 +5,7 @@ import sys
 
 GPIO.setmode(GPIO.BCM)
 
-# Defineing Trigger and Echo pin locations on Rasp
+# Defining Trigger and Echo pin locations on Rasp
 pinTriggerLeft = 19
 pinEchoLeft = 13
 

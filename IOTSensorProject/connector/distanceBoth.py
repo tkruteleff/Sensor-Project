@@ -2,12 +2,15 @@ from distance import *
 from distanceRight import *
 from DBConnector import *
 
+maxDistance = 90
+
+
 while True:
-    if SensorRangeRight() < 60:
-        if SensorRangeLeft() < 60:
+    if SensorRangeRight() < maxDistance:
+        if SensorRangeLeft() < maxDistance:
             print ("1")
-            #insert1()
-    elif SensorRangeLeft() < 60:
-        if SensorRangeRight() < 60:
+            # insert1()
+    elif SensorRangeLeft() < maxDistance:
+        if SensorRangeRight() < maxDistance:
             print("2")
-            #insert2()
+            # insert2()
