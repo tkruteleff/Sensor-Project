@@ -18,11 +18,3 @@ while True:
             visitorCount = visitorCount - 1
             # insert2()
             print (visitorCount)
-    if SensorRangeRight() & SensorRangeLeft() < maxDistance:
-        print("1")
-        visitorCount = visitorCount + 1
-        print (visitorCount)
-    elif SensorRangeLeft() & SensorRangeRight() < maxDistance:
-        print ("2")
-        visitorCount = visitorCount -1
-        print (visitorCount)
