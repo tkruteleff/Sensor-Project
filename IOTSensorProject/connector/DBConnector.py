@@ -23,7 +23,7 @@ def insert1():
     with connection.cursor() as cursor:
         # Plus to visitorcount in database
         sql = "INSERT INTO raw_data (state) VALUES (%s)"
-        cursor.execute(sql, getattr(visitorCount))
+        cursor.execute(sql, visitorCount)
     connection.commit()
 
 
@@ -31,5 +31,5 @@ def insert2():
     with connection.cursor() as cursor2:
         # Minus from visitorcount in database
         sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
-        cursor2.execute(sql2, getattr(visitorCount))
+        cursor2.execute(sql2, visitorCount)
     connection.commit()
