@@ -1,6 +1,6 @@
 from distance import *
 from distanceRight import *
-from DBConnector import *
+from DBConnector import insertIncrease,insertDelete
 
 maxDistance = 90
 visitorCount = 0
@@ -8,13 +8,11 @@ visitorCount = 0
 while True:
     if SensorRangeRight() < maxDistance:
         if SensorRangeLeft() < maxDistance:
-            print ("1")
             visitorCount = visitorCount + 1
             print (visitorCount)
-            insert1()
+            insertIncrease()
     elif SensorRangeLeft() < maxDistance:
         if SensorRangeRight() < maxDistance:
-            print("2")
             visitorCount = visitorCount - 1
             print (visitorCount)
-            insert2()
+            insertDelete()

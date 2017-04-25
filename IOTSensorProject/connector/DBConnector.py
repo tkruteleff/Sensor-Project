@@ -19,7 +19,7 @@ def selectAll():
         select.execute(sqlS)
     connection.commit()
 
-def insert1():
+def insertIncrease():
     with connection.cursor() as cursor:
         # Plus to visitorcount in database
         sql = "INSERT INTO raw_data (state) VALUES (%s)"
@@ -27,7 +27,7 @@ def insert1():
     connection.commit()
 
 
-def insert2():
+def insertDelete():
     with connection.cursor() as cursor2:
         # Minus from visitorcount in database
         sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
