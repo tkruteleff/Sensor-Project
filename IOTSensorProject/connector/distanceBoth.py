@@ -1,6 +1,6 @@
 from distance import *
 from distanceRight import *
-from DBConnector import *
+# from DBConnector import *
 
 maxDistance = 90
 visitorCount = 0
