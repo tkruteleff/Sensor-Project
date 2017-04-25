@@ -1,6 +1,8 @@
 import pymysql
 import pymysql.cursors
 
+visitorCount = 0
+
 # Connect to the database
 connection = pymysql.connect(host='10.207.3.0',
                              port=3306,
@@ -10,6 +12,13 @@ connection = pymysql.connect(host='10.207.3.0',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
+
+def selectAll():
+    with connection.cursor() as select:
+        # Get all rows
+        sqlS = "Select id, state, time FROM raw_data"
+        select.execute(sqlS)
+    connection.commit()
 
 def insert1():
     with connection.cursor() as cursor:

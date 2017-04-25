@@ -10,11 +10,11 @@ while True:
         if SensorRangeLeft() < maxDistance:
             print ("1")
             visitorCount = visitorCount + 1
-            # insert1()
             print (visitorCount)
+            # insert1()
     elif SensorRangeLeft() < maxDistance:
         if SensorRangeRight() < maxDistance:
             print("2")
             visitorCount = visitorCount - 1
-            # insert2()
             print (visitorCount)
+            # insert2()
