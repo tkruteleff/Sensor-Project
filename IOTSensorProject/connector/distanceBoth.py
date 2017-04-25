@@ -1,6 +1,6 @@
 from distance import *
 from distanceRight import *
-from DBConnector import insertIncrease,insertDelete
+from DBConnector import insertIncrease, insertDelete
 
 maxDistance = 90
 visitorCount = 0
