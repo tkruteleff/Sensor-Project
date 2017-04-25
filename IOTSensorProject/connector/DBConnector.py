@@ -1,7 +1,6 @@
 import pymysql
 import pymysql.cursors
-
-visitorCount = 0
+from distanceBoth import *
 
 # Connect to the database
 connection = pymysql.connect(host='10.207.3.0',
@@ -22,15 +21,15 @@ def selectAll():
 
 def insert1():
     with connection.cursor() as cursor:
-        # Create a new record
+        # Plus to visitorcount in database
         sql = "INSERT INTO raw_data (state) VALUES (%s)"
-        cursor.execute(sql, ('1'))
+        cursor.execute(sql, getattr(visitorCount))
     connection.commit()
 
 
 def insert2():
     with connection.cursor() as cursor2:
-        # Add 2 to database
+        # Minus from visitorcount in database
         sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
-        cursor2.execute(sql2, ('2'))
+        cursor2.execute(sql2, getattr(visitorCount))
     connection.commit()
