@@ -1,6 +1,6 @@
 import pymysql
 import pymysql.cursors
-import distanceBoth
+from distanceBoth import *
 
 # Connect to the database
 connection = pymysql.connect(host='10.207.3.0',
@@ -23,7 +23,7 @@ def insertIncrease():
     with connection.cursor() as cursor:
         # Plus to visitorcount in database
         sql = "INSERT INTO raw_data (state) VALUES (%s)"
-        cursor.execute(sql, raw_input(distanceBoth.visitorCount))
+        cursor.execute(sql, visitorCount)
     connection.commit()
 
 
@@ -31,5 +31,5 @@ def insertDelete():
     with connection.cursor() as cursor2:
         # Minus from visitorcount in database
         sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
-        cursor2.execute(sql2, raw_input(distanceBoth.visitorCount))
+        cursor2.execute(sql2, visitorCount)
     connection.commit()
