@@ -56,6 +56,7 @@ Testidatan puutteessa näyttö on erittäin tarkkaa, aikarajoituksia ym. tulee l
 
 ## Update 24.4.2017
 
+
 #### RasPi .py
 Koodi ei saa raakoja arvoja importista, vain metodit toimivat
 -> Ratkaisu: Kutsutaan metodia arvon sijaan
@@ -79,3 +80,5 @@ Python koodi saadaan tukemaan ideaa, mutta php graphin SQL lausetta ei saada oik
 
 #### Progress
 SQL lause toimii, näyttää sarakkeen sisällön. ( Tällähetkellä vielä state) Kantamuutosta ei tehty.
+
+Python prepattu tiotokantamuutosta varten
