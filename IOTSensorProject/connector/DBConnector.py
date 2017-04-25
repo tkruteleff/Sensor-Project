@@ -1,6 +1,6 @@
 import pymysql
 import pymysql.cursors
-from distanceBoth import *
+from distanceBoth import visitorCount
 
 # Connect to the database
 connection = pymysql.connect(host='10.207.3.0',
