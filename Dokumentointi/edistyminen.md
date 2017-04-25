@@ -68,3 +68,8 @@ Ranget oikein
 #### PHP
 Rajoitus kymmeneen uusimpaan tapahtumaan. 
 -> Ongelma: Data on "väärinpäin" eli vasemmalta oikealle luettaessa uusin on ensin. Tarkoitus saada rajoitus n. 15 tapahtumaan(tai useampaan) ja saada vanhin ensimmäiseksi aikajanalle. 
+
+
+## Update 25.4.2017
+
+Muuots kantaan, Statesta muutetaan count, jonka idea on kertoa suoraan senhetkinen paikallolijoiden määrä
