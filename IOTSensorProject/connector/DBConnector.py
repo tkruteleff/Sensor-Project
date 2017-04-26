@@ -3,7 +3,6 @@ import pymysql.cursors
 import Variables
 import time
 
-
 # Connect to the database
 connection = pymysql.connect(host='10.207.3.0',
                              port=3306,
@@ -23,9 +22,10 @@ if time.strftime("%H:%M:%S") == str("00:00:00"):
 def selectAll():
     with connection.cursor() as select:
         # Get all rows
-        sqlS = "Select id, state, time FROM raw_data"
+        sqlS = "SELECT id, state, time FROM raw_data"
         select.execute(sqlS)
     connection.commit()
+
 
 def insertIncrease():
     with connection.cursor() as cursor:
@@ -41,4 +41,3 @@ def insertDelete():
         sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
         cursor2.execute(sql2, Variables.visitorCount)
     connection.commit()
-
