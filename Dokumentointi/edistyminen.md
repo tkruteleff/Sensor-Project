@@ -81,4 +81,11 @@ Python koodi saadaan tukemaan ideaa, mutta php graphin SQL lausetta ei saada oik
 #### Progress
 SQL lause toimii, näyttää sarakkeen sisällön. ( Tällähetkellä vielä state) Kantamuutosta ei tehty.
 
-Python prepattu tiotokantamuutosta varten
+## Update 26.4.2017
+
+#### DB
+Tietokannan statea käytetään nykyisen kävijämäärän näyttämiseen
+
+#### RasPi Py
+Laskee kävijämäärän molempiin suuntiin 
+->Ongelma: Jos koodin käynnistää uudestaan, laskuri nollaantuu ja aloittaa '1'. Tarvitaan tietokantahaku, joka alustaa laskurin.
