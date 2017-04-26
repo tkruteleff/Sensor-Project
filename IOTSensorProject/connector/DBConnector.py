@@ -1,6 +1,7 @@
 import pymysql
 import pymysql.cursors
 import Variables
+import time
 
 
 # Connect to the database
@@ -11,7 +12,6 @@ connection = pymysql.connect(host='10.207.3.0',
                              db='sensor_data',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
-
 
 def selectAll():
     with connection.cursor() as select:
@@ -34,3 +34,4 @@ def insertDelete():
         sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
         cursor2.execute(sql2, Variables.visitorCount)
     connection.commit()
+
