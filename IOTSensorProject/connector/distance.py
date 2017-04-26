@@ -2,7 +2,6 @@ import RPi.GPIO as GPIO
 import time
 import signal
 import sys
-import Variables
 
 GPIO.setmode(GPIO.BCM)
 
@@ -43,9 +42,9 @@ def SensorRangeLeft():
 
     TimeElapsedLeft = stopTimeLeft - startTimeLeft
 
-    Variables.distanceLeftC = (TimeElapsedLeft * 34300) / 2
+    distanceLeftC = (TimeElapsedLeft * 34300) / 2
 
-    print ("DistanceLeft: %.1f cm" % Variables.distanceLeftC)
+    print ("DistanceLeft: %.1f cm" % distanceLeftC)
     time.sleep(1.5)
 
-    return Variables.distanceLeftC
+    return distanceLeftC
