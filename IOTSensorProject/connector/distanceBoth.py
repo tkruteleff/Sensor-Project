@@ -12,7 +12,7 @@ while True:
             print (Variables.visitorCount)
             DBConnector.insertIncrease()
 
-    if SensorRangeLeft() < maxDistance:
+    elif SensorRangeLeft() < maxDistance:
         if SensorRangeRight() < maxDistance:
             Variables.visitorCount = Variables.visitorCount - 1
             print (Variables.visitorCount)
