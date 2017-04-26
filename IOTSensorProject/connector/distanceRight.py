@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import signal
 import sys
+import Variables
 
 GPIO.setmode(GPIO.BCM)
 
@@ -42,9 +43,9 @@ def SensorRangeRight():
 
     TimeElapsed = stopTime - startTime
 
-    distanceRightC = (TimeElapsed * 34300) / 2
+    Variables.distanceRightC = (TimeElapsed * 34300) / 2
 
-    print ("DistanceRight: %.1f cm" % distanceRightC)
+    print ("DistanceRight: %.1f cm" % Variables.distanceRightC)
     time.sleep(1.5)
 
-    return distanceRightC
+    return Variables.distanceRightC
