@@ -3,7 +3,7 @@ from distance import *
 import Variables
 import DBConnector
 
-maxDistance = 90
+maxDistance = 120
 
 while True:
     if SensorRangeRight() < maxDistance:
