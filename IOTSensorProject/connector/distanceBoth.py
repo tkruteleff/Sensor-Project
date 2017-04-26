@@ -3,17 +3,16 @@ from distance import *
 import Variables
 import DBConnector
 
-maxDistance = 120
 
 while True:
-    if SensorRangeRight() < maxDistance:
-        if SensorRangeLeft() < maxDistance:
+    if SensorRangeRight() < Variables.maxDistance:
+        if SensorRangeLeft() < Variables.maxDistance:
             Variables.visitorCount = Variables.visitorCount + 1
             print (Variables.visitorCount)
             DBConnector.insertIncrease()
 
-    elif SensorRangeLeft() < maxDistance:
-        if SensorRangeRight() < maxDistance:
+    elif SensorRangeLeft() < Variables.maxDistance:
+        if SensorRangeRight() < Variables.maxDistance:
             Variables.visitorCount = Variables.visitorCount - 1
             print (Variables.visitorCount)
             if Variables.visitorCount <= 0:
