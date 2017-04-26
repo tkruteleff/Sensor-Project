@@ -45,6 +45,6 @@ def SensorRangeRight():
     distanceRightC = (TimeElapsed * 34300) / 2
 
     print ("DistanceRight: %.1f cm" % distanceRightC)
-    time.sleep(2.5)
+    time.sleep(1.5)
 
     return distanceRightC
