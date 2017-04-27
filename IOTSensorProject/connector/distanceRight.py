@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import signal
 import sys
+from Variables import *
 
 GPIO.setmode(GPIO.BCM)
 
