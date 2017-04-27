@@ -12,7 +12,7 @@ while True:
                 print (Variables.visitorCount)
                 DBConnector.insertIncrease()
 
-    if Variables.distanceLeftC < Variables.maxDistance:
+    elif Variables.distanceLeftC < Variables.maxDistance:
         if Variables.distanceRightC < Variables.maxDistance:
             if Variables.visitorCount > 0:
                 Variables.visitorCount = Variables.visitorCount - 1
