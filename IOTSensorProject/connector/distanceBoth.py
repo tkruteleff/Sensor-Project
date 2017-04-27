@@ -4,8 +4,8 @@ import Variables
 import DBConnector
 
 while True:
-    SensorRangeLeft() & SensorRangeRight()
-    
+    SensorRangeLeft(), SensorRangeRight()
+
     if Variables.distanceRightC < Variables.maxDistance:
             if Variables.distanceLeftC < Variables.maxDistance:
                 Variables.visitorCount = Variables.visitorCount + 1
