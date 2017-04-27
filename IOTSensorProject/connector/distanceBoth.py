@@ -1,17 +1,19 @@
-from distance import *
 from distanceRight import *
-
-maxRange = 90
-minRange = 10
-
-left = distanceLeftC
-right = distanceRightC
+from distance import *
+import Variables
+import DBConnector
 
 while True:
-    SensorRangeLeft()
-    SensorRangeRight()
 
-    if left > minRange & left < maxRange:
-        print ("1")
-    if right > minRange & right < maxRange:
-        print ("2")
+    if SensorRangeRight() < Variables.maxDistance:
+            if SensorRangeLeft() < Variables.maxDistance:
+                Variables.visitorCount = Variables.visitorCount + 1
+                print (Variables.visitorCount)
+                DBConnector.insertIncrease()
+
+    elif SensorRangeLeft() < Variables.maxDistance:
+        if SensorRangeRight() < Variables.maxDistance:
+            if Variables.visitorCount > 0:
+                Variables.visitorCount = Variables.visitorCount - 1
+                print (Variables.visitorCount)
+                DBConnector.insertDelete()
