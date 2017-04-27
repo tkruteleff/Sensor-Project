@@ -89,3 +89,11 @@ Tietokannan statea käytetään nykyisen kävijämäärän näyttämiseen
 #### RasPi Py
 Laskee kävijämäärän molempiin suuntiin 
 ->Ongelma: Jos koodin käynnistää uudestaan, laskuri nollaantuu ja aloittaa '1'. Tarvitaan tietokantahaku, joka alustaa laskurin.
+
+## Update 27.4.2017
+#### RasPi Py
+Ei toimi miten halutaan, edellenkään...
+
+#### PHP
+Erillinen PHP sivu joka sisältää HTML koodia. Sivu näyttää indexg.php luoman kuvan graaphista ja tiedon viimeisemästä merkinnästä. Tästä näkee nykyisen kävijämäärän helposti.
+
