@@ -1,18 +1,22 @@
+import thread
 from distanceRight import *
 from distance import *
 import Variables
 import DBConnector
 
+thread.start_new_thread(SensorRangeLeft, ())
+thread.start_new_thread(SensorRangeRight, ())
+
 
 while True:
-    if SensorRangeRight() < Variables.maxDistance:
-            if SensorRangeLeft() < Variables.maxDistance:
+    if Variables.distanceRightC < Variables.maxDistance:
+            if Variables.distanceLeftC < Variables.maxDistance:
                 Variables.visitorCount = Variables.visitorCount + 1
                 print (Variables.visitorCount)
                 DBConnector.insertIncrease()
 
-    elif SensorRangeLeft() < Variables.maxDistance:
-        if SensorRangeRight() < Variables.maxDistance:
+    elif Variables.distanceLeftC < Variables.maxDistance:
+        if Variables.distanceRightC < Variables.maxDistance:
             if Variables.visitorCount > 0:
                 Variables.visitorCount = Variables.visitorCount - 1
                 print (Variables.visitorCount)
