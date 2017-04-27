@@ -1,11 +1,11 @@
-import thread
+from threading import Thread
 from distanceRight import *
 from distance import *
 import Variables
 import DBConnector
 
-thread.start_new_thread(SensorRangeLeft, ())
-thread.start_new_thread(SensorRangeRight, ())
+Thread.start(SensorRangeLeft())
+Thread.start(SensorRangeRight())
 
 
 while True:
