@@ -1,14 +1,11 @@
-from threading import Thread
 from distanceRight import *
 from distance import *
 import Variables
 import DBConnector
 
-Thread.start(SensorRangeLeft())
-Thread.start(SensorRangeRight())
-
-
 while True:
+    SensorRangeLeft() & SensorRangeRight()
+    
     if Variables.distanceRightC < Variables.maxDistance:
             if Variables.distanceLeftC < Variables.maxDistance:
                 Variables.visitorCount = Variables.visitorCount + 1
