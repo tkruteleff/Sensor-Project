@@ -9,6 +9,7 @@ GPIO.setmode(GPIO.BCM)
 # Defining Trigger and Echo pin locations on Rasp
 pinTriggerRight = 23
 pinEchoRight = 24
+dleft = Variables.distanceRightC
 
 
 def close(signal, frame):
@@ -24,7 +25,7 @@ GPIO.setup(pinTriggerRight, GPIO.OUT)
 GPIO.setup(pinEchoRight, GPIO.IN)
 
 
-def SensorRangeRight():
+def SensorRangeRight(dleft):
     GPIO.output(pinTriggerRight, True)
     time.sleep(0.00001)
     GPIO.output(pinTriggerRight, False)
@@ -43,9 +44,9 @@ def SensorRangeRight():
 
     TimeElapsed = stopTime - startTime
 
-    Variables.distanceRightC = (TimeElapsed * 34300) / 2
+    dleft = (TimeElapsed * 34300) / 2
 
-    print ("DistanceRight: %.1f cm" % Variables.distanceRightC)
+    print ("DistanceRight: %.1f cm" % dleft)
     time.sleep(1)
 
-    return Variables.distanceRightC
+    return dleft
