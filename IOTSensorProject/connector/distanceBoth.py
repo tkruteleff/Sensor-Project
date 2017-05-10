@@ -6,11 +6,13 @@ import DBConnector
 def checkLeft():
     if SensorRangeRight(dright) < Variables.maxDistance:
         Variables.visitorCount = Variables.visitorCount - 1
+        print (Variables.visitorCount)
         DBConnector.insertDelete()
 
 def checkRight():
     if SensorRangeLeft(dleft) < Variables.maxDistance:
         Variables.visitorCount = Variables.visitorCount + 1
+        print(Variables.visitorCount)
         DBConnector.insertIncrease()
 
 while True:
