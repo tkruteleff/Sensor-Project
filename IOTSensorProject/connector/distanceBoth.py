@@ -5,6 +5,8 @@ import DBConnector
 
 while True:
 
+    SensorRangeLeft(dleft) and SensorRangeRight(dright)
+
     if SensorRangeRight(dright) < Variables.maxDistance:
             if SensorRangeLeft(dleft) < Variables.maxDistance:
                 Variables.visitorCount = Variables.visitorCount + 1
