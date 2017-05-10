@@ -24,7 +24,7 @@ GPIO.setup(pinTriggerRight, GPIO.OUT)
 GPIO.setup(pinEchoRight, GPIO.IN)
 
 
-def SensorRangeRight(Variables):
+def SensorRangeRight():
     GPIO.output(pinTriggerRight, True)
     time.sleep(0.00001)
     GPIO.output(pinTriggerRight, False)
