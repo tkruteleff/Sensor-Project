@@ -7,8 +7,8 @@ while True:
 
     SensorRangeLeft(dleft) and SensorRangeRight(dright)
 
-    if getattr(str(SensorRangeRight(dleft)), str(dleft)) < Variables.maxDistance:
-            if getattr(str(SensorRangeLeft(dleft)), str(dleft)) < Variables.maxDistance:
+    if getattr(str(SensorRangeRight(dleft)), str(dleft), 0) < Variables.maxDistance:
+            if getattr(str(SensorRangeLeft(dleft)), str(dleft), 0) < Variables.maxDistance:
                 Variables.visitorCount = Variables.visitorCount + 1
                 print (Variables.visitorCount)
                 DBConnector.insertIncrease()
