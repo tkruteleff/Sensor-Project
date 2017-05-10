@@ -7,35 +7,41 @@ $link = mysqli_connect('10.208.0.12', 'quaria', 'debiancolasininen')
 
 mysqli_select_db($link, 'sensor_data') or die('Could not select database');
 
-$dataArray=array();
+//$dataArray=array();
 
 //get data from database
-$sql="SELECT time,  COUNT(*) AS 'state' FROM raw_data GROUP BY time";
+$sql="SELECT time, state FROM raw_data ORDER BY time DESC LIMIT 25";
 $result = mysqli_query($link, $sql) or die('Query failed: ' . mysqli_error());
 if ($result) {
   while ($row = mysqli_fetch_assoc($result)) {
-	$id=$row["id"];
-	$state=$row["state"];
-	$time=$row["time"];
-      //add to data areray
+        $state=$row["state"];
+        $time=$row["time"];
+      //add to data array
       $dataArray[$time]=$state;
-  }
+ }
 }
-
-//configure graph
-$graph->addData($dataArray);
-//$graph->setTitle("Lassin ja Kaapon Motivaatiokayra");
-//$graph->setGradient("lime", "green");
-//$graph->setBarOutlineColor("black");
-//$graph->createGraph();
-$graph->setupXAxis(50);
+//configure grap;
+$graph->addData(array_reverse($dataArray));
+$graph->setTitle("Lassin ja Kaapon Motivaatiokayra");
+$graph->setRange(160,0);
+//$graph->setupXAxis(40);
 $graph->setBars(false);
 $graph->setLine(true);
 $graph->setDataPoints(true);
 $graph->setDataPointColor('maroon');
 $graph->setDataValues(true);
 $graph->setDataValueColor('maroon');
-$graph->setGoalLine(.0025);
-$graph->setGoalLineColor('red');
+$graph->setGoalLine(19.9, "green", "solid");
+$graph->setGoalLine(20, "green", "solid");
+$graph->setGoalLine(20.1, "green", "solid");
+$graph->setGoalLine(39.9, "yellow", "solid");
+$graph->setGoalLine(40, "yellow", "solid");
+$graph->setGoalLine(40.1, "yellow", "solid");
+$graph->setGoalLine(69.9, "red", "solid");
+$graph->setGoalLine(70, "red", "solid");
+$graph->setGoalLine(70.1, "red", "solid");
+$graph->setGoalLine(100, "black", "solid");
 $graph->createGraph();
 ?>
+
+
