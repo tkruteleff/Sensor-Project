@@ -22,26 +22,27 @@ signal.signal(signal.SIGINT, close)
 GPIO.setup(pinTriggerLeft, GPIO.OUT)
 GPIO.setup(pinEchoLeft, GPIO.IN)
 
-GPIO.output(pinTriggerLeft, True)
-time.sleep(0.00001)
-GPIO.output(pinTriggerLeft, False)
+while True:
+    GPIO.output(pinTriggerLeft, True)
+    time.sleep(0.00001)
+    GPIO.output(pinTriggerLeft, False)
 
 
-GPIO.output(pinTriggerLeft, True)
-time.sleep(0.00001)
-GPIO.output(pinTriggerLeft, False)
-startTimeLeft = time.time()
-stopTimeLeft = time.time()
-
-while 0 == GPIO.input(pinEchoLeft):
+    GPIO.output(pinTriggerLeft, True)
+    time.sleep(0.00001)
+    GPIO.output(pinTriggerLeft, False)
     startTimeLeft = time.time()
-
-while 1 == GPIO.input(pinEchoLeft):
     stopTimeLeft = time.time()
 
-TimeElapsedLeft = stopTimeLeft - startTimeLeft
+    while 0 == GPIO.input(pinEchoLeft):
+        startTimeLeft = time.time()
 
-distanceLeftC = (TimeElapsedLeft * 34300) / 2
+    while 1 == GPIO.input(pinEchoLeft):
+        stopTimeLeft = time.time()
 
-print ("DistanceLeft: %.1f cm" % distanceLeftC)
-time.sleep(1)
+    TimeElapsedLeft = stopTimeLeft - startTimeLeft
+
+    distanceLeftC = (TimeElapsedLeft * 34300) / 2
+
+    print ("DistanceLeft: %.1f cm" % distanceLeftC)
+    time.sleep(1)
