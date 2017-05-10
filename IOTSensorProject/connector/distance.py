@@ -28,7 +28,7 @@ time.sleep(0.00001)
 GPIO.output(pinTriggerLeft, False)
 
 
-def SensorRangeLeft():
+def SensorRangeLeft(distanceLeftC):
     GPIO.output(pinTriggerLeft, True)
     time.sleep(0.00001)
     GPIO.output(pinTriggerLeft, False)
@@ -43,9 +43,9 @@ def SensorRangeLeft():
 
     TimeElapsedLeft = stopTimeLeft - startTimeLeft
 
-    Variables.distanceLeftC = (TimeElapsedLeft * 34300) / 2
+    distanceLeftC = (TimeElapsedLeft * 34300) / 2
 
-    print ("DistanceLeft: %.1f cm" % Variables.distanceLeftC)
+    print ("DistanceLeft: %.1f cm" % distanceLeftC)
     time.sleep(1)
 
-    return Variables.distanceLeftC
+    return distanceLeftC
