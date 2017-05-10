@@ -46,7 +46,8 @@ def SensorRangeLeft(dright):
 
     dright = (TimeElapsedLeft * 34300) / 2
 
-    print ("DistanceLeft: %.1f cm" % dright)
-    time.sleep(1)
+    if dright < 2500:
+        print ("DistanceLeft: %.1f cm" % dright)
+        time.sleep(1)
 
     return dright
