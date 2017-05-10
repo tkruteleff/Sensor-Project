@@ -10,5 +10,8 @@ Sensor project for Haaga-Helia's System Project II course
 - [Verkkokauppan RaspB ohje](https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)
 - [Selitystä matkan mittauksesta (YT)](https://www.youtube.com/watch?v=ShnzQSFwVXQ)
 
-## Example projects
+## Example projects and sources
 - [Leon Anavi Distance](https://github.com/leon-anavi/rpi-examples/tree/master/HC-SR04/python)
+- [ElliotTB PHPGraphLib](https://github.com/elliottb/phpgraphlib)
+- [Kim Salmi FallDetector](https://github.com/infr/falldetector-public)
+- [WaterWorks PiCam](https://github.com/WatershedArts/Footfall)
