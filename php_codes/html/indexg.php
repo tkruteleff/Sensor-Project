@@ -1,13 +1,12 @@
 <?php
 include("/var/www/html/phpgraphlib/phpgraphlib.php");
 $graph=new PHPGraphLib(1000,500);
-
+//This code uses PHPgraphlib http://www.ebrueggeman.com/phpgraphlib
 $link = mysqli_connect('10.208.0.12', 'quaria', 'debiancolasininen')
    or die('Could not connect: ' . mysqli_error());
 
 mysqli_select_db($link, 'sensor_data') or die('Could not select database');
 
-//$dataArray=array();
 
 //get data from database
 $sql="SELECT time, state FROM raw_data ORDER BY time DESC LIMIT 25";
@@ -22,7 +21,7 @@ if ($result) {
 }
 //configure grap;
 $graph->addData(array_reverse($dataArray));
-$graph->setTitle("Lassin ja Kaapon Motivaatiokayra");
+$graph->setTitle(" ");
 $graph->setRange(160,0);
 //$graph->setupXAxis(40);
 $graph->setBars(false);
@@ -43,5 +42,4 @@ $graph->setGoalLine(70.1, "red", "solid");
 $graph->setGoalLine(100, "black", "solid");
 $graph->createGraph();
 ?>
-
 
