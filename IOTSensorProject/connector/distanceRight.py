@@ -29,10 +29,6 @@ def SensorRangeRight(dright):
     GPIO.output(pinTriggerRight, True)
     time.sleep(0.00001)
     GPIO.output(pinTriggerRight, False)
-
-    GPIO.output(pinTriggerRight, True)
-    time.sleep(0.00001)
-    GPIO.output(pinTriggerRight, False)
     startTime = time.time()
     stopTime = time.time()
 
@@ -48,6 +44,6 @@ def SensorRangeRight(dright):
 
     if dright < 2500:
         print ("DistanceRight: %.1f cm" % dright)
-        time.sleep(1)
+        time.sleep(0.5)
 
     return dright

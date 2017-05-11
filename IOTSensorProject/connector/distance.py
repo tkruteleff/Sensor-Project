@@ -29,10 +29,6 @@ def SensorRangeLeft(dleft):
     GPIO.output(pinTriggerLeft, True)
     time.sleep(0.00001)
     GPIO.output(pinTriggerLeft, False)
-
-    GPIO.output(pinTriggerLeft, True)
-    time.sleep(0.00001)
-    GPIO.output(pinTriggerLeft, False)
     startTimeLeft = time.time()
     stopTimeLeft = time.time()
 
@@ -48,6 +44,6 @@ def SensorRangeLeft(dleft):
 
     if dleft < 2500:
         print ("DistanceLeft: %.1f cm" % dleft)
-        time.sleep(1)
+        time.sleep(0.5)
 
     return dleft
