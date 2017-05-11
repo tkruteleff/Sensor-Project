@@ -21,10 +21,10 @@ connection = pymysql.connect(host='10.207.3.0',
 
 with connection.cursor() as select:
     # Get all rows
-    sqlS = "SELECT id, state, time FROM raw_data"
+    sqlS = "SELECT state FROM raw_data"
     select.execute(sqlS)
     for row in select:
-        Variables.visitorCount = row.state
+        Variables.visitorCount = "%s" % (row["state"])
 connection.commit()
 
 
