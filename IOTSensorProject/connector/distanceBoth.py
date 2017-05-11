@@ -2,6 +2,8 @@ from distanceRight import *
 from distance import *
 import Variables
 import DBConnector
+import sys
+import signal
 
 
 # If the left sensor's range is below 50cm the program checks
@@ -23,6 +25,14 @@ def checkRight():
         Variables.visitorCount = int(Variables.visitorCount) + 1
         print(Variables.visitorCount)
         DBConnector.insertIncrease()
+
+# Closes and cleans up the run
+def close(signal, frame):
+    print("\nTurning off ultrasonic distance detection...\n")
+    GPIO.cleanup()
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, close)
 
 
 # Calls the getLastValue method in the DBConnector.py file to check

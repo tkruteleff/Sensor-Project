@@ -1,7 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-import signal
-import sys
 import Variables
 
 GPIO.setmode(GPIO.BCM)
@@ -10,15 +8,6 @@ GPIO.setmode(GPIO.BCM)
 pinTriggerRight = 23
 pinEchoRight = 24
 dright = Variables.distanceRightC
-
-# Closes and cleans up the run
-def close(signal, frame):
-    print("\nTurning off ultrasonic distance detection...\n")
-    GPIO.cleanup()
-    sys.exit(0)
-
-
-signal.signal(signal.SIGINT, close)
 
 # Setting up the trigger and echo pin Outputs and Inputs
 GPIO.setup(pinTriggerRight, GPIO.OUT)
