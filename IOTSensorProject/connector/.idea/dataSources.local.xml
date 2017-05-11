@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="sensor_data@10.207.3.0" uuid="82387ead-3b30-4dfe-b188-df5f08729e60">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>quaria</user-name>
+    </data-source>
+  </component>
+</project>
