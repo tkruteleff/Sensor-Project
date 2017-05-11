@@ -16,6 +16,8 @@ def checkLeft():
             print (Variables.visitorCount)
             DBConnector.insertDelete()
 
+    return
+
 
 # If the right sensor's range is below 50cm the program checks
 # if the left sensor's range is also below 50cm.
@@ -26,14 +28,17 @@ def checkRight():
         print(Variables.visitorCount)
         DBConnector.insertIncrease()
 
+    return
+
+
 # Closes and cleans up the run
 def close(signal, frame):
     print("\nTurning off ultrasonic distance detection...\n")
     GPIO.cleanup()
     sys.exit(0)
 
-signal.signal(signal.SIGINT, close)
 
+signal.signal(signal.SIGINT, close)
 
 # Calls the getLastValue method in the DBConnector.py file to check
 # the previous visitorcount.
@@ -45,7 +50,6 @@ while True:
 
     while SensorRangeLeft(dleft) < Variables.maxDistance:
         checkLeft()
-
 
     while SensorRangeRight(dright) < Variables.maxDistance:
         checkRight()
