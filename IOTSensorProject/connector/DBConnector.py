@@ -24,7 +24,7 @@ with connection.cursor() as select:
     sqlS = "SELECT state FROM raw_data"
     select.execute(sqlS)
     for row in select:
-        Variables.visitorCount = "%s" % (row["state"])
+        Variables.visitorCount = "%i" % (row["state"])
 connection.commit()
 
 
