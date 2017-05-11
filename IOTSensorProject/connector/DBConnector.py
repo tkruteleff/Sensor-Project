@@ -12,19 +12,20 @@ connection = pymysql.connect(host='10.207.3.0',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
-if time.strftime("%H:%M:%S") == str("10:28:00"):
-    with connection.cursor() as delete:
+# if time.strftime("%H:%M:%S") == str("10:28:00"):
+    # with connection.cursor() as delete:
         # Delete all rows from raw_data
-        sqlD = "TRUNCATE TABLE raw_data"
-        delete.execute(sqlD)
-    connection.commit()
+    #    sqlD = "TRUNCATE TABLE raw_data"
+    #    delete.execute(sqlD)
+    # connection.commit()
 
-def selectAll():
-    with connection.cursor() as select:
-        # Get all rows
-        sqlS = "SELECT id, state, time FROM raw_data"
-        select.execute(sqlS)
-    connection.commit()
+with connection.cursor() as select:
+    # Get all rows
+    sqlS = "SELECT id, state, time FROM raw_data"
+    select.execute(sqlS)
+    for row in select:
+        Variables.visitorCount = row.state
+connection.commit()
 
 
 def insertIncrease():
