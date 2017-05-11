@@ -43,8 +43,9 @@ DBConnector.getLastValue()
 # if the value is below maxDistance
 while True:
 
-    if SensorRangeLeft(dleft) < Variables.maxDistance:
+    while SensorRangeLeft(dleft) < Variables.maxDistance:
         checkLeft()
 
-    if SensorRangeRight(dright) < Variables.maxDistance:
+
+    while SensorRangeRight(dright) < Variables.maxDistance:
         checkRight()
