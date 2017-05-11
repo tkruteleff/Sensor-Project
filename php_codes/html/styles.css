@@ -1,0 +1,26 @@
+body {
+        background-color: white;
+}
+div1 {
+        position: relative;
+        left: 70px;
+        top: 50px;
+        font-size: 30px;
+
+}
+div2 {
+        Position: fixed;
+        left: 650px;
+        top: 50px;
+        font-size: 30px;
+}
+
+div3 {
+        position: fixed;
+        left: 850px;
+        top: 35px;
+        font-size: 75px;
+        border-style: groove;
+        border-width: 5px;
+}
+
