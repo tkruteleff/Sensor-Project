@@ -24,14 +24,14 @@ with connection.cursor() as select:
     sqlS = "SELECT state FROM raw_data"
     select.execute(sqlS)
     for row in select:
-        Variables.visitorCount = "%i" % (row["state"])
+        Variables.visitorCount = "%s" % (row["state"])
 connection.commit()
 
 
 def insertIncrease():
     with connection.cursor() as cursor:
         # Plus to visitorcount in database
-        sql = "INSERT INTO raw_data (state) VALUES (%i)"
+        sql = "INSERT INTO raw_data (state) VALUES (%s)"
         cursor.execute(sql, Variables.visitorCount)
     connection.commit()
 
@@ -39,6 +39,6 @@ def insertIncrease():
 def insertDelete():
     with connection.cursor() as cursor2:
         # Minus from visitorcount in database
-        sql2 = "INSERT INTO raw_data (state) VALUES (%i)"
+        sql2 = "INSERT INTO raw_data (state) VALUES (%s)"
         cursor2.execute(sql2, Variables.visitorCount)
     connection.commit()
