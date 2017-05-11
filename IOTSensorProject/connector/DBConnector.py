@@ -19,6 +19,7 @@ connection = pymysql.connect(host='10.207.3.0',
     #    delete.execute(sqlD)
     # connection.commit()
 
+# Gets the last value of the state row and inserts it into the visitorCount variable
 def getLastValue():
     with connection.cursor() as select:
         # Get all rows

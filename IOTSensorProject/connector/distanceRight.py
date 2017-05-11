@@ -9,9 +9,9 @@ GPIO.setmode(GPIO.BCM)
 # Defining Trigger and Echo pin locations on Rasp
 pinTriggerRight = 23
 pinEchoRight = 24
-dleft = Variables.distanceRightC
+dright = Variables.distanceRightC
 
-
+# Closes and cleans up the run
 def close(signal, frame):
     print("\nTurning off ultrasonic distance detection...\n")
     GPIO.cleanup()
@@ -24,8 +24,8 @@ signal.signal(signal.SIGINT, close)
 GPIO.setup(pinTriggerRight, GPIO.OUT)
 GPIO.setup(pinEchoRight, GPIO.IN)
 
-
-def SensorRangeRight(dleft):
+# Counts the distance of the right sensor and return the value of dleft
+def SensorRangeRight(dright):
     GPIO.output(pinTriggerRight, True)
     time.sleep(0.00001)
     GPIO.output(pinTriggerRight, False)
@@ -44,10 +44,10 @@ def SensorRangeRight(dleft):
 
     TimeElapsed = stopTime - startTime
 
-    dleft = (TimeElapsed * 34300) / 2
+    dright = (TimeElapsed * 34300) / 2
 
-    if dleft < 2500:
-        print ("DistanceRight: %.1f cm" % dleft)
+    if dright < 2500:
+        print ("DistanceRight: %.1f cm" % dright)
         time.sleep(1)
 
-    return dleft
+    return dright
