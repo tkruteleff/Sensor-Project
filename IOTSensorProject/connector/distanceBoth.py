@@ -6,7 +6,7 @@ import sys
 import signal
 
 
-# If the left sensor's range is below 50cm the program checks
+# If the left sensor's range is below maxdistance the program checks
 # if the right sensor's range is also below 50cm.
 # If that is true the program lowers the visitorcount by one.
 def checkLeft():
@@ -16,10 +16,7 @@ def checkLeft():
             print (Variables.visitorCount)
             DBConnector.insertDelete()
 
-    return
-
-
-# If the right sensor's range is below 50cm the program checks
+# If the right sensor's range is below maxdistance the program checks
 # if the left sensor's range is also below 50cm.
 # If that is true the program increases the visitorcount by one.
 def checkRight():
@@ -27,9 +24,6 @@ def checkRight():
         Variables.visitorCount = int(Variables.visitorCount) + 1
         print(Variables.visitorCount)
         DBConnector.insertIncrease()
-
-    return
-
 
 # Closes and cleans up the run
 def close(signal, frame):
@@ -48,8 +42,8 @@ DBConnector.getLastValue()
 # if the value is below maxDistance
 while True:
 
-    while SensorRangeLeft(dleft) < Variables.maxDistance:
+    if SensorRangeLeft(dleft) < Variables.maxDistance:
         checkLeft()
 
-    while SensorRangeRight(dright) < Variables.maxDistance:
+    if SensorRangeRight(dright) < Variables.maxDistance:
         checkRight()
