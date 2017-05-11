@@ -7,14 +7,14 @@ import DBConnector
 def checkLeft():
     if SensorRangeRight(dright) < Variables.maxDistance:
         if Variables.visitorCount >= 0:
-            Variables.visitorCount = Variables.visitorCount - 1
+            Variables.visitorCount += Variables.visitorCount
             print (Variables.visitorCount)
             DBConnector.insertDelete()
 
 
 def checkRight():
     if SensorRangeLeft(dleft) < Variables.maxDistance:
-        Variables.visitorCount = Variables.visitorCount + 1
+        Variables.visitorCount += Variables.visitorCount
         print(Variables.visitorCount)
         DBConnector.insertIncrease()
 
