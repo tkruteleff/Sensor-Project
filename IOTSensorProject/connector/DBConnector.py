@@ -22,7 +22,7 @@ connection = pymysql.connect(host='10.207.3.0',
 def getLastValue():
     with connection.cursor() as select:
         # Get all rows
-        sqlS = "SELECT id, state, timestamp FROM raw_data"
+        sqlS = "SELECT id, state, time FROM raw_data"
         select.execute(sqlS)
         for row in select:
             Variables.visitorCount = "%s" % (row["state"])
