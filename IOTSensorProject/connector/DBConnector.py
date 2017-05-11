@@ -19,13 +19,14 @@ connection = pymysql.connect(host='10.207.3.0',
     #    delete.execute(sqlD)
     # connection.commit()
 
-with connection.cursor() as select:
-    # Get all rows
-    sqlS = "SELECT state FROM raw_data"
-    select.execute(sqlS)
-    for row in select:
-        Variables.visitorCount = "%s" % (row["state"])
-connection.commit()
+def getLastValue():
+    with connection.cursor() as select:
+        # Get all rows
+        sqlS = "SELECT id, state, timestamp FROM raw_data"
+        select.execute(sqlS)
+        for row in select:
+            Variables.visitorCount = "%s" % (row["state"])
+    connection.commit()
 
 
 def insertIncrease():

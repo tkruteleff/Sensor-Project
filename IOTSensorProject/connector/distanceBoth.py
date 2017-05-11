@@ -19,6 +19,8 @@ def checkRight():
         DBConnector.insertIncrease()
 
 
+DBConnector.getLastValue()
+
 while True:
 
     if SensorRangeLeft(dleft) < Variables.maxDistance:
