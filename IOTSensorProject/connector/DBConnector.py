@@ -12,12 +12,6 @@ connection = pymysql.connect(host='10.207.3.0',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
-# if time.strftime("%H:%M:%S") == str("10:28:00"):
-    # with connection.cursor() as delete:
-        # Delete all rows from raw_data
-    #    sqlD = "TRUNCATE TABLE raw_data"
-    #    delete.execute(sqlD)
-    # connection.commit()
 
 # Gets the last value of the state row and inserts it into the visitorCount variable
 def getLastValue():
