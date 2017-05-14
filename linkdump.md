@@ -1,6 +1,3 @@
-# Sensor-Project
-Sensor project for Haaga-Helia's System Project II course
-
 ##### Link dump
 - [VDI Cloud](https://vdi-lab.cp.haaga-helia.fi/client/)
 - [GPIO Header](https://www.raspberrypi.org/documentation/usage/gpio-plus-and-raspi2/) 
